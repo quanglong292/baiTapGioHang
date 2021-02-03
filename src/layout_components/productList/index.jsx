@@ -3,20 +3,13 @@ import Product from "./product";
 
 export default class Products extends Component {
   render() {
-    return (
-      <div className="container danh-sach-san-pham">
-        <div className="row">
-          <div className="col-sm-4">
-            <Product />
-          </div>
-          <div className="col-sm-4">
-            <Product />
-          </div>
-          <div className="col-sm-4">
-            <Product />
-          </div>
+    const {products, handleSelected, handleRenderModal, handlePushAmount} = this.props;
+    return products.map((item, index) => {
+      return (
+        <div className="col-sm-4">
+          <Product key={index} product={item} handleSelected={handleSelected} handleRenderModal={handleRenderModal} handlePushAmount={handlePushAmount}/>
         </div>
-      </div>
-    );
+      );
+    });
   }
 }
