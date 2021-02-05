@@ -99,10 +99,13 @@ export default class MainRender extends Component {
     } else {
       newCartList.push(newItem);
     }
+
     this.setState({
       cartList: newCartList,
     })
+    console.log(this.state.cartList.amout);
   }
+
 
   render() {
     return (
@@ -110,7 +113,7 @@ export default class MainRender extends Component {
         <section className="container">
           <h3 className="title text-center">Bài tập giỏ hàng</h3>
           <div className="container text-center my-2">
-            <Header />
+            <Header cartList = {this.state.cartList}/>
           </div>
           <div className="container danh-sach-san-pham row">
             <Products products={this.products} handleSelected={this.handleSelected} handleRenderModal={this.handleRenderModal} handlePushAmount={this.handlePushAmount}/>
