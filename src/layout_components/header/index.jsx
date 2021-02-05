@@ -14,13 +14,7 @@ export default class Header extends Component {
           data-toggle="modal"
           data-target="#modelId"
         >
-          Giỏ hàng <span>({
-          () => {
-            return cartList.reduce((sum, item, index) => {
-              return sum += item.amout;
-            }, 0)
-          }
-          })</span>
+          Giỏ hàng <span>({sumAmount})</span>
         </button>
       </div>
     );
